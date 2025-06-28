@@ -10,19 +10,19 @@ Infrastructure as Code (IaC) is the practice of managing and provisioning comput
 </p>
 ## 📁 Project Structure
 .
-├── .github/
-│ └── workflows/
-│ └── terraform.yml # GitHub Actions workflow for appling pre-prod infrastructure 
-│ └── terraformprod.yml # GitHub Actions workflow for appling prod infrastructure 
-├── modules/ # Reusable Terraform modules
-│ └── network/ # module for creating VPC, Subnets and Internet Gateway
-│ └── Compute/ # module for creating EC2 instances and Security Groups
-│ └── Logging module/ # module for creating CloudWatch Logs group and S3 bucket and VPC Flow Logs routed to the central S3 bucket and CloudWatch Logs for Production only
-├── terraform.tfstate.d/ # has state file for each workspace
-├── envs/ # has Backend configuration (S3 + DynamoDB for state and locks) and Variable definitions (.tfvars) for each environment
-│ └── prod/ 
-│ └── pre-prod/
-├── provider.tf # configure aws as a provider
-└── README.md # Documentation
+├── .github/<br>
+│ └── workflows/<br>
+│ └── terraform.yml # GitHub Actions workflow for appling pre-prod infrastructure <br>
+│ └── terraformprod.yml # GitHub Actions workflow for appling prod infrastructure <br>
+├── modules/ # Reusable Terraform modules<br>
+│ └── network/ # module for creating VPC, Subnets and Internet Gateway<br>
+│ └── Compute/ # module for creating EC2 instances and Security Groups<br>
+│ └── Logging module/ # module for creating CloudWatch Logs group and S3 bucket and VPC Flow Logs routed to the central S3 bucket and CloudWatch Logs for Production only<br>
+├── terraform.tfstate.d/ # has state file for each workspace<br>
+├── envs/ # has Backend configuration (S3 + DynamoDB for state and locks) and Variable definitions (.tfvars) for each environment<br>
+│ └── prod/ <br>
+│ └── pre-prod/<br>
+├── provider.tf # configure aws as a provider<br>
+└── README.md # Documentation<br>
 
 
