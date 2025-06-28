@@ -54,7 +54,7 @@ Terraform follows a declarative workflow, where you describe your desired infras
    Same for the prod but cd envs/prod 
 ## Architecture Diagram:
    <p align="center">
-  <img src="https://drive.google.com/file/d/1OZRaQD4WcFqHgtYBseiT-Ms3HQ53RVMs/view?usp=sharing" width="600" alt="Terraform illustration">
+  <img src="https://drive.google.com/file/d/1OZRaQD4WcFqHgtYBseiT-Ms3HQ53RVMs/view" width="600" alt="Terraform illustration">
   </p>
 
 
