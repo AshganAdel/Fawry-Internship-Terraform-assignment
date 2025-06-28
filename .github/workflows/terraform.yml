@@ -30,5 +30,5 @@ jobs:
       run: terraform plan -var-file="pre-prod.tfvars"
       working-directory: ./envs/pre-prod
     - name: Terraform Apply
-      run: terraform apply -var-file="pre-prod.tfvars"
+      run: terraform apply -auto-approve -var-file="pre-prod.tfvars"
       working-directory: ./envs/pre-prod
