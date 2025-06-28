@@ -27,8 +27,8 @@ jobs:
       run: terraform init
       working-directory: ./envs/pre-prod
     - name: Terraform Plan
-      run: terraform plan -var-file="terraform.tfvars"
+      run: terraform plan -var-file="pre-prod.tfvars"
       working-directory: ./envs/pre-prod
     - name: Terraform Apply
-      run: terraform apply -var-file="terraform.tfvars"
+      run: terraform apply -var-file="pre-prod.tfvars"
       working-directory: ./envs/pre-prod
