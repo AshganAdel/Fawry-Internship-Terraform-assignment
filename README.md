@@ -29,10 +29,13 @@ Infrastructure as Code (IaC) is the practice of managing and provisioning comput
 ## Terraform Workflow & Commands
 Terraform follows a declarative workflow, where you describe your desired infrastructure state, and Terraform makes it happen. The standard workflow includes the following steps:
 ### 1. terraform init:
-   Initializes the working directory, Configures backend and downloads required provider plugins and modules.<br>
+   Initializes the working directory, Configures backend and downloads required provider plugins and modules.
 ### 2. terraform plan:
    Creates an execution plan, showing what actions Terraform will take without making actual changes.
-
+### 3. terraform apply:
+   Applies the changes required to reach the desired state of the configuration.
+   common flags: Auto-approve (e.g., terraform apply -auto-approve).
+### 4. terraform destroy:
 
 
 
