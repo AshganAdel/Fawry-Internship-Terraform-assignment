@@ -8,7 +8,7 @@ Infrastructure as Code (IaC) is the practice of managing and provisioning comput
 <p align="center">
   <img src="https://web-unified-docs-hashicorp.vercel.app/api/assets/terraform/latest/img/docs/intro-terraform-apis.png" width="600" alt="Terraform illustration">
 </p>
-## 📁 Project Structure
+## Project Structure
 .
 ├── .github/<br>
 │ └── workflows/<br>
