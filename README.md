@@ -33,11 +33,29 @@ Terraform follows a declarative workflow, where you describe your desired infras
 ### 2. terraform plan:
    Creates an execution plan, showing what actions Terraform will take without making actual changes.
 ### 3. terraform apply:
-   Applies the changes required to reach the desired state of the configuration.
+   Applies the changes required to reach the desired state of the configuration.<br>
    common flags: Auto-approve (e.g., terraform apply -auto-approve).
 ### 4. terraform destroy:
-   Destroys all resources defined in the configuration.
+   Destroys all resources defined in the configuration.<br>
    common flags: Auto-approve (e.g., terraform destroy -auto-approve).
+
+## Running the Project
+### 1. Clone the Repository:
+   git clone https://github.com/AshganAdel/Fawry-Internship-Terraform-assignment.git
+### 2. Configure Credentials:
+   Add your credentials by configuring AWS CLI command: aws configure , the type your access key and secret key.
+### 3. Run terraform command:
+   To apply the pre-prod infrastructure <br>
+   Run:
+   cd envs/pre-prod <br>
+   terraform init <br>
+   terraform plan <br>
+   terraform apply <br>
+   Same for the prod but cd envs/prod 
+## Architecture Diagram:
+   <p align="center">
+  <img src="https://drive.google.com/file/d/1OZRaQD4WcFqHgtYBseiT-Ms3HQ53RVMs/view?usp=sharing" width="600" alt="Terraform illustration">
+  </p>
 
 
 
