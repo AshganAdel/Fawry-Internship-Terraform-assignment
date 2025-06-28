@@ -36,6 +36,8 @@ Terraform follows a declarative workflow, where you describe your desired infras
    Applies the changes required to reach the desired state of the configuration.
    common flags: Auto-approve (e.g., terraform apply -auto-approve).
 ### 4. terraform destroy:
+   Destroys all resources defined in the configuration.
+   common flags: Auto-approve (e.g., terraform destroy -auto-approve).
 
 
 
