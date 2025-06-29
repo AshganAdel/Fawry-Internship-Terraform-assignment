@@ -53,10 +53,10 @@ Terraform follows a declarative workflow, where you describe your desired infras
    To apply the pre-prod infrastructure <br>
    Run:
    ```bash
-   cd envs/pre-prod <br>
-   terraform init <br>
-   terraform plan -var-file="pre-prod.tfvars"<br>
-   terraform apply -var-file="pre-prod.tfvars"<br>
+   cd envs/pre-prod 
+   terraform init 
+   terraform plan -var-file="pre-prod.tfvars"
+   terraform apply -var-file="pre-prod.tfvars"
    ```
    Same for the prod but cd envs/prod 
 ## Architecture Diagram:
