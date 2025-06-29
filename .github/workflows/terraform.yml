@@ -8,6 +8,7 @@ on:
     paths:
       - 'envs/**'
       - 'modules/**'
+      - 'provider.tf'
 
 jobs:
   Terraform-apply-to-pre-prod:
