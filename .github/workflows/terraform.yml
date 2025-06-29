@@ -2,15 +2,16 @@ name: Terraform CI/CD
 
 on:
   push:
+    branches:
+      - main
+      - staging
     paths:
       - 'envs/**'
       - 'modules/**'
-      - 'terraform.tfstate.d/**'
-      - 'provider.tf'
 
 jobs:
-  terraform:
-    name: 'Terraform Apply'
+  Terraform-apply-to-pre-prod:
+    if: github.ref_name == 'staging' 
     runs-on: ubuntu-latest
     steps:
     - name: checkout code
@@ -32,3 +33,26 @@ jobs:
     - name: Terraform Apply
       run: terraform apply -auto-approve -var-file="pre-prod.tfvars"
       working-directory: ./envs/pre-prod
+  Terraform-apply-to-prod:
+    if: github.ref_name == 'main' 
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout code
+      uses: actions/checkout@v3
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v3
+      with:
+        aws-access-key-id: ${{ secrets.ACCESS_KEY }}
+        aws-secret-access-key: ${{ secrets.SECRET_KEY }}
+        aws-region: us-west-2
+    - name: setup Terraform
+      uses: hashicorp/setup-terraform@v3
+    - name: Terraform Init
+      run: terraform init
+      working-directory: ./envs/prod
+    - name: Terraform Plan
+      run: terraform plan -var-file="prod.tfvars"
+      working-directory: ./envs/prod
+    - name: Terraform Apply
+      run: terraform apply -auto-approve -var-file="prod.tfvars"
+      working-directory: ./envs/prod
