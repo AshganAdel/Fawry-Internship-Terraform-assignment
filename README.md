@@ -10,7 +10,7 @@ Infrastructure as Code (IaC) is the practice of managing and provisioning comput
 </p>
 
 ## Project Structure
-.
+.<br>
 ├── .github/<br>
 │ └── workflows/<br>
 │ └── terraform.yml # GitHub Actions workflow for appling pre-prod infrastructure <br>
@@ -41,16 +41,24 @@ Terraform follows a declarative workflow, where you describe your desired infras
 
 ## Running the Project
 ### 1. Clone the Repository:
+```bash
    git clone https://github.com/AshganAdel/Fawry-Internship-Terraform-assignment.git
+```
 ### 2. Configure Credentials:
-   Add your credentials by configuring AWS CLI command: aws configure , the type your access key and secret key.
+   Add your credentials by configuring AWS CLI command: 
+   ```bash
+   aws configure
+   ```
+   then type your access key and secret key.
 ### 3. Run terraform command:
    To apply the pre-prod infrastructure <br>
    Run:
+   ```bash
    cd envs/pre-prod <br>
    terraform init <br>
    terraform plan <br>
    terraform apply <br>
+   ```
    Same for the prod but cd envs/prod 
 ## Architecture Diagram:
    <p align="center">
