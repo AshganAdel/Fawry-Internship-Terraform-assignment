@@ -13,8 +13,7 @@ Infrastructure as Code (IaC) is the practice of managing and provisioning comput
 .<br>
 ├── .github/<br>
 │ └── workflows/<br>
-│ └── terraform.yml # GitHub Actions workflow for appling pre-prod infrastructure <br>
-│ └── terraformprod.yml # GitHub Actions workflow for appling prod infrastructure <br>
+│ └── terraform.yml # GitHub Actions workflow for appling pre-prod and prod infrastructure <br>
 ├── modules/ # Reusable Terraform modules<br>
 │ └── network/ # module for creating VPC, Subnets and Internet Gateway<br>
 │ └── Compute/ # module for creating EC2 instances and Security Groups<br>
@@ -56,8 +55,8 @@ Terraform follows a declarative workflow, where you describe your desired infras
    ```bash
    cd envs/pre-prod <br>
    terraform init <br>
-   terraform plan <br>
-   terraform apply <br>
+   terraform plan -var-file="pre-prod.tfvars"<br>
+   terraform apply -var-file="pre-prod.tfvars"<br>
    ```
    Same for the prod but cd envs/prod 
 ## Architecture Diagram:
