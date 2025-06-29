@@ -45,9 +45,9 @@ Terraform follows a declarative workflow, where you describe your desired infras
 ```
 ### 2. Configure Credentials:
    Add your credentials by configuring AWS CLI command: 
-   ```bash
+```bash
    aws configure
-   ```
+```
    then type your access key and secret key.
 ### 3. Run terraform command:
    To apply the pre-prod infrastructure <br>
