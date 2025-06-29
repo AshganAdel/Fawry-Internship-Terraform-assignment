@@ -5,10 +5,8 @@ on:
     branches:
       - main
       - staging
-    paths:
-      - 'envs/**'
-      - 'modules/**'
-      - 'provider.tf'
+    paths-ignore:
+      - 'README.md'
 
 jobs:
   Terraform-apply-to-pre-prod:
