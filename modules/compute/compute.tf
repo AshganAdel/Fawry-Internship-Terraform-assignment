@@ -1,5 +1,5 @@
 resource "aws_security_group" "instance" {
-  name        = "poc-${terraform.workspace}-security_group"
+  name        = "poc-${var.env}-security_group"
   description = "Allow SSH and HTTP"
   vpc_id      = var.vpc_id
 
@@ -25,17 +25,17 @@ resource "aws_security_group" "instance" {
   }
 
   tags = {
-    Name = "poc-${terraform.workspace}-security_group"
+    Name = "poc-${var.env}-security_group"
   }
 }
 
 resource "aws_instance" "ec2" {
   count                  = var.instance_count
-  ami                    = "ami-05ee755be0cd7555c"
+  ami                    = "ami-05f991c49d264708f"
   instance_type          = "t2.micro"
   subnet_id              = element(var.public_subnet_ids[*], count.index % length(var.public_subnet_ids))
   vpc_security_group_ids = [aws_security_group.instance.id]
   tags = {
-    Name = "poc-${terraform.workspace}-ec2-${count.index}"
+    Name = "poc-${var.env}-ec2-${count.index}"
   }
 }
