@@ -55,10 +55,8 @@ jobs:
     - name: Terraform Apply
       run: terraform apply -auto-approve -var-file="prod.tfvars"
       working-directory: ./envs/prod
-    - name: List all files after terraform apply
-      run: ls -laR
     - name: Upload SSH key as artifact
       uses: actions/upload-artifact@v4
       with:
         name: ec2_key
-        path: ./terraform/ec2_key.pem
+        path: ./envs/prod/ec2_key.pem
