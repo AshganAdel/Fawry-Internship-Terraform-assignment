@@ -59,4 +59,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: ec2_key
-        path: ./ec2_key.pem
+        path: ./terraform/ec2_key.pem
