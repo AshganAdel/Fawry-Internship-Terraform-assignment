@@ -16,8 +16,8 @@ module "network" {
   subnet_count = var.subnet_count 
 }
 
-module "logging" {
-  source = "../../modules/logging"
-  vpc_id = module.network.vpc_id
-  flow_log_role_arn = "arn:aws:iam::568838099888:role/poc-prod-vpc-flow-logs-role"
-}
+#module "logging" {
+#  source = "../../modules/logging"
+#  vpc_id = module.network.vpc_id
+#  flow_log_role_arn = "arn:aws:iam::568838099888:role/poc-prod-vpc-flow-logs-role"
+#}
