@@ -1,5 +1,5 @@
-resource "aws_ecr_repository" "example" {
-    name                 = "poc-prod-my-ecr-repo" # Replace with your desired repository name
+resource "aws_ecr_repository" "my_ecr_repo" {
+    name                 = "poc-prod-my-ecr-repo" 
     image_tag_mutability = "MUTABLE"
 
     image_scanning_configuration {
