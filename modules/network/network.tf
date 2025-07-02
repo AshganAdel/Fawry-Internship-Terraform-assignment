@@ -2,7 +2,7 @@ resource "aws_vpc" "this" {
   cidr_block = var.cidr_block
 
   tags = { 
-    Name = "poc-${terraform.workspace}-vpc" }
+    Name = "poc-${var.env}-vpc" }
 }
 
 resource "aws_subnet" "public" {
@@ -13,7 +13,7 @@ resource "aws_subnet" "public" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name = "poc-${terraform.workspace}-subnet-${count.index}"
+    Name = "poc-${var.env}-subnet-${count.index}"
   }
 }
 
@@ -30,7 +30,7 @@ resource "aws_route_table" "public" {
     gateway_id = aws_internet_gateway.this.id
   }
 
-  tags = { Name = "poc-${terraform.workspace}-public_route_table" }
+  tags = { Name = "poc-${var.env}-public_route_table" }
 }
 
 resource "aws_route_table_association" "public" {
