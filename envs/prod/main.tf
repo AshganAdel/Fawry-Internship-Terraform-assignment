@@ -23,3 +23,7 @@ module "logging" {
   source = "../../modules/logging"
   vpc_id = module.network.vpc_id
 }
+
+module "ecr" {
+  source = "../../modules/ecr"
+}
