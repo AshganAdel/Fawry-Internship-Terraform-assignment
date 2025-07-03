@@ -1,12 +1,13 @@
 resource "aws_security_group" "instance" {
   name        = "poc-${var.env}-security_group"
-  description = "Allow SSH and HTTP"
+  description = "Allow SSH, HTTP and k3s API"
   vpc_id      = var.vpc_id
 
   dynamic "ingress" {
     for_each = {
       ssh  = { port = 22, cidrs = ["0.0.0.0/0"] }
       http = { port = 8080, cidrs = ["0.0.0.0/0"] }
+      k3s_api = { port = 6443, cidrs = [var.cidr_block]}
     }
     content {
       description = ingress.key
