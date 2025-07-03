@@ -53,3 +53,8 @@ jobs:
     - name: Terraform Apply
       run: terraform apply -auto-approve -var-file="prod.tfvars"
       working-directory: ./envs/prod
+    - name: Upload SSH key as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: ec2_key
+        path: ./modules/compute/ec2_key.pem
