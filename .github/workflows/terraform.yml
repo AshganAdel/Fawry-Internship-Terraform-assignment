@@ -53,6 +53,9 @@ jobs:
     - name: Terraform Apply
       run: terraform apply -auto-approve -var-file="prod.tfvars"
       working-directory: ./envs/prod
+    - name: get instances ips
+      run: terraform output ec2_ips
+      working-directory: ./envs/prod
     - name: Upload SSH key as artifact
       uses: actions/upload-artifact@v4
       with:
