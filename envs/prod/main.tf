@@ -10,6 +10,7 @@ module "compute" {
   instance_count = var.instance_count
   public_subnet_ids = module.network.public_subnet_ids
   env = var.env
+  cidr_block = var.cidr_block
 }
 
 module "network" {
