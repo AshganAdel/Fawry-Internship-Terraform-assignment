@@ -9,6 +9,7 @@ module "compute" {
   vpc_id = module.network.vpc_id
   instance_count = var.instance_count
   public_subnet_ids = module.network.public_subnet_ids
+  env = var.env
 }
 
 module "network" {
