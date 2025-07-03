@@ -3,6 +3,7 @@ variable "cidr_block" { type = string }
 variable "subnet_count" {
   type = number
 }
+variable "env" { type = string }
 module "compute" {
   source = "../../modules/compute"
   vpc_id = module.network.vpc_id
