@@ -16,4 +16,5 @@ module "network" {
   source = "../../modules/network"
   cidr_block = var.cidr_block
   subnet_count = var.subnet_count 
+  env = var.env
 }
