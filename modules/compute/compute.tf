@@ -7,7 +7,7 @@ resource "aws_security_group" "instance" {
     for_each = {
       ssh  = { port = 22, cidrs = ["0.0.0.0/0"] }
       http = { port = 8080, cidrs = ["0.0.0.0/0"] }
-      k3s_api = { port = 6443, cidrs = [var.cidr_block]}
+      k3s_api = { port = 6443, cidrs = ["0.0.0.0/0"]}
       nodeport = { port = 30080, cidrs = ["0.0.0.0/0"] }
     }
     content {
