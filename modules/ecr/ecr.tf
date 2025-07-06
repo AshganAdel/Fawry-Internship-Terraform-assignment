@@ -1,4 +1,10 @@
+provider "aws" {
+  alias  = "public"
+  region = "us-east-1"
+}
+
 resource "aws_ecrpublic_repository" "my_ecr_repo" {
+  provider        = aws.public
   repository_name = "poc-prod-my-ecr-repo" 
 }
 resource "aws_ecrpublic_repository_policy" "allow_public_read" {
