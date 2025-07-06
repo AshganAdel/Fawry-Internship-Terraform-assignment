@@ -6,7 +6,7 @@ resource "aws_ecrpublic_repository" "my_ecr_repo" {
   }
 }
 resource "aws_ecrpublic_repository_policy" "allow_public_read" {
-  repository = aws_ecrpublic_repository.my_ecr_repo.poc-prod-my-ecr-repo
+  repository_name = aws_ecrpublic_repository.my_ecr_repo.poc-prod-my-ecr-repo
 
   policy = jsonencode({
     Version = "2008-10-17"
