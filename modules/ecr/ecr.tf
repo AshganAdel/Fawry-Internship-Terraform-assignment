@@ -1,9 +1,5 @@
 resource "aws_ecrpublic_repository" "my_ecr_repo" {
   repository_name = "poc-prod-my-ecr-repo" 
-
-  image_scanning {
-    scan_on_push = true                   
-  }
 }
 resource "aws_ecrpublic_repository_policy" "allow_public_read" {
   repository_name = aws_ecrpublic_repository.my_ecr_repo.poc-prod-my-ecr-repo
