@@ -1,6 +1,9 @@
-# Infrastructure as Code (IaC) with Terraform
-## Introduction
+# AWS Landing Zone with Terraform
 
+## Introduction
+This project implement a reproducible AWS Landing Zone using Infrastructure as Code (IaC) with Terraform—restricted to AWS Free Tier–eligible resources.
+
+## IaC and Terraform Introduction 
 Infrastructure as Code (IaC) is the practice of managing and provisioning computing infrastructure using machine-readable configuration files, rather than physical hardware or interactive configuration tools.
 
 *Terraform* is a popular open-source IaC tool that enables developers to define and provision infrastructure in a consistent, repeatable manner.
@@ -17,8 +20,8 @@ Infrastructure as Code (IaC) is the practice of managing and provisioning comput
 ├── modules/ # Reusable Terraform modules<br>
 │ └── network/ # module for creating VPC, Subnets and Internet Gateway<br>
 │ └── Compute/ # module for creating EC2 instances and Security Groups<br>
-│ └── Logging module/ # module for creating CloudWatch Logs group and S3 bucket and VPC Flow Logs routed to the central S3 bucket and CloudWatch Logs for Production only<br>
-├── terraform.tfstate.d/ # has state file for each workspace<br>
+│ └── Logging/ # module for creating CloudWatch Logs group and S3 bucket and VPC Flow Logs routed to the central S3 bucket and CloudWatch Logs for Production only<br>
+│ └── ecr/ # module for creating public repository 
 ├── envs/ # has Backend configuration (S3 + DynamoDB for state and locks) and Variable definitions (.tfvars) for each environment<br>
 │ └── prod/ <br>
 │ └── pre-prod/<br>
